@@ -12,7 +12,7 @@ jobs:
       directory: api/CustomerAPI    # the path of the Customer API 
       name: annher                  # Your POSTFIX
 
-          steps:
+    steps:
     - uses: actions/checkout@main       # Checkout the code to the GitHub runner 
 
     - name: Log into Azure              # Log into Azure using the service credentials provided earlier

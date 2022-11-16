@@ -25,3 +25,10 @@ jobs:
 #    paths:
 #      - 'api/CustomerAPI/**' 
 #      - '.github/workflows/*'
+
+    - name: Build image with Azure Container Registry
+      uses: azure/CLI@v1
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az acr build --registry acr${{ env.name }}.azurecr.io --image customerapi:${{ github.run_number }} . -f api/CustomerAPI/Dockerfile 

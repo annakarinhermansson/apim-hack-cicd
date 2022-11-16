@@ -3,7 +3,7 @@ on:
     paths:
       - 'api/CustomerAPI/**'          # Only changes in and below this path will trigger this workflow
       - '.github/workflows/*'
-
+  workflow_dispatch:
 name: Customer Api                  # Name of the workflow
 jobs:
   build-and-deploy:
@@ -19,7 +19,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
 
-        on: [workflow_dispatch]
+       
 #on:
 #  push:                             # Workflow will start when code is pushed into this repo
 #    paths:

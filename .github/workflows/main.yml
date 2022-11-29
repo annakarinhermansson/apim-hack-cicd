@@ -55,5 +55,5 @@ jobs:
         resourceGroupName: rg-${{ env.name }}               # Resource group
         template: ${{ env.directory }}/Bicep/main.bicep     # File to deploy
         #parameters: dockerimagetag=${{ github.run_number }} name=${{ env.name }}  # Parameters
-        parameters: dockerimagetag=${{ github.run_number }} name=${{ env.name }} apidefinitionurl=https://stg${{ env.name }}hack.blob.core.windows.net/apidefinitions/swagger.json?${{ secrets.AZURE_BLOB_SAS_TOKEN_ALT }}
+        parameters: dockerimagetag=${{ github.run_number }} name=${{ env.name }} apidefinitionurl=https://stg${{ env.name }}hack.blob.core.windows.net/apidefinitions/swagger.json?${{ secrets.AZURE_BLOB_SAS_TOKEN }}
         failOnStdErr: false

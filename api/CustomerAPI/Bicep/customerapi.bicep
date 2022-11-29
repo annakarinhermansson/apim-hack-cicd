@@ -7,6 +7,23 @@ param db_connectionstring string
 // Variable
 var appname = 'ca-customerapi'
 
+// existing resources
+resource uami 'Microsoft.ManagedIdentity/userAssignedIdentities@2021-09-30-preview' existing = {
+  name: 'umi-${name}'
+}
+
+resource acr 'Microsoft.ContainerRegistry/registries@2019-12-01-preview' existing = {
+  name: 'acr${name}'
+}
+
+resource cae 'Microsoft.App/managedEnvironments@2022-03-01' existing = {
+  name: 'cae-${name}'
+}
+
+resource apim 'Microsoft.ApiManagement/service@2021-08-01' existing = {
+  name: 'apim-${name}'
+}
+
 resource ca_customerapi 'Microsoft.App/containerApps@2022-03-01' = {
   name: appname                         // Name of the Container App
   location: location

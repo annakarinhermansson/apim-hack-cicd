@@ -20,11 +20,11 @@ jobs:
     
 
        
-on:
-  push:                             # Workflow will start when code is pushed into this repo
-    paths:
-      - 'api/CustomerAPI/**' 
-      - '.github/workflows/*'
+#on:
+#  push:                             # Workflow will start when code is pushed into this repo
+ #   paths:
+#      - 'api/CustomerAPI/**' 
+ #     - '.github/workflows/*'
 
     - name: Build image with Azure Container Registry
       uses: azure/CLI@v1
